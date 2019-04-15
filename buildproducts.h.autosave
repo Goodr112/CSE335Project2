@@ -1,0 +1,10 @@
+#ifndef BUILDPRODUCTS_H
+#define BUILDPRODUCTS_H
+
+#include "builder.h"
+
+class buildProducts : public Builder {
+    
+};
+
+#endif // BUILDPRODUCTS_H
