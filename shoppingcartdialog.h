@@ -15,6 +15,9 @@ public:
     explicit shoppingCartDialog(QWidget *parent = nullptr);
     ~shoppingCartDialog();
 
+private slots:
+    void on_deleteButton_clicked();
+
 private:
     Ui::shoppingCartDialog *ui;
 };

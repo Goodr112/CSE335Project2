@@ -12,3 +12,4 @@ shoppingCartDialog::~shoppingCartDialog()
 {
     delete ui;
 }
+

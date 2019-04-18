@@ -1,46 +1,20 @@
 #include "buildproducts.h"
+#include <QFile>
+#include <QTextStream>
+#include <iostream>
 
-buildProducts::buildProducts(QObject *parent)
-    : QAbstractItemModel(parent)
-{
-}
+void buildProducts::readFiles() {
+    QFile file("C:/Users/parke/OneDrive/Documents/GitHub/CSE335Project2/Technology.csv");
+    if (file.open(QIODevice::ReadOnly))
+    {
+       QTextStream in(&file);
+       while (!in.atEnd())
+       {
+          QString line = in.readLine();
+          std::string a = line.toLocal8Bit().constData();
+          std::cout << a << endl;
 
-QVariant buildProducts::headerData(int section, Qt::Orientation orientation, int role) const
-{
-    // FIXME: Implement me!
-}
-
-QModelIndex buildProducts::index(int row, int column, const QModelIndex &parent) const
-{
-    // FIXME: Implement me!
-}
-
-QModelIndex buildProducts::parent(const QModelIndex &index) const
-{
-    // FIXME: Implement me!
-}
-
-int buildProducts::rowCount(const QModelIndex &parent) const
-{
-    if (!parent.isValid())
-        return 0;
-
-    // FIXME: Implement me!
-}
-
-int buildProducts::columnCount(const QModelIndex &parent) const
-{
-    if (!parent.isValid())
-        return 0;
-
-    // FIXME: Implement me!
-}
-
-QVariant buildProducts::data(const QModelIndex &index, int role) const
-{
-    if (!index.isValid())
-        return QVariant();
-
-    // FIXME: Implement me!
-    return QVariant();
+       }
+       file.close();
+    }
 }
