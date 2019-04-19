@@ -96,4 +96,5 @@ void MainWindow::on_loadDatabase_clicked()
         column += 1;
     }
 
+    ui->loadDatabase->setEnabled(false);
 }
