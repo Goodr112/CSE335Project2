@@ -5,7 +5,7 @@
 
 class buildBundles : public Builder {
 public:
-    virtual void readFiles();
+    virtual std::vector<QString> readFiles();
 };
 
 #endif // BUILDBUNDLES_H

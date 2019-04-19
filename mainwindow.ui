@@ -17,32 +17,12 @@
    <widget class="QTableWidget" name="productsTable">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>30</x>
       <y>0</y>
       <width>511</width>
       <height>271</height>
      </rect>
     </property>
-    <column>
-     <property name="text">
-      <string>Product Name</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Type</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Price</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Special Attribute</string>
-     </property>
-    </column>
    </widget>
    <widget class="QTableWidget" name="bundlesTable">
     <property name="geometry">

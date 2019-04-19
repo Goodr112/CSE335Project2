@@ -5,7 +5,7 @@
 
 class buildProducts : public Builder {
 public:
-    virtual void readFiles();
+    virtual std::vector<QString> readFiles();
 };
 
 #endif // BUILDPRODUCTS_H

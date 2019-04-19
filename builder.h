@@ -1,10 +1,14 @@
 #ifndef BUILDER_H
 #define BUILDER_H
 
+#include<iostream>
+#include<vector>
+#include <Qstring>
+
 
 class Builder{
 public:
-    virtual void readFiles() = 0;
+    virtual std::vector<QString> readFiles() = 0;
 };
 
 #endif // BUILDER_H
