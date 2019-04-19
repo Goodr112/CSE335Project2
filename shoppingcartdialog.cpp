@@ -13,3 +13,6 @@ shoppingCartDialog::~shoppingCartDialog()
     delete ui;
 }
 
+void shoppingCartDialog::on_deleteButton_clicked() {
+
+}

@@ -49,7 +49,7 @@
      </property>
     </column>
    </widget>
-   <widget class="QPushButton" name="loadDatabase">
+   <widget class="ResponsiveButton" name="loadDatabase">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -62,7 +62,7 @@
      <string>Load Database</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="addToCart">
+   <widget class="ResponsiveButton" name="addToCart">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -75,7 +75,7 @@
      <string>Add to Cart</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="showCart">
+   <widget class="ResponsiveButton" name="showCart">
     <property name="geometry">
      <rect>
       <x>430</x>
@@ -95,7 +95,7 @@
      <x>0</x>
      <y>0</y>
      <width>604</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -110,6 +110,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ResponsiveButton</class>
+   <extends>QPushButton</extends>
+   <header location="global">responsivebutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

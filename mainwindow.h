@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QObject>
 #include "shoppingcartdialog.h"
 
 
@@ -17,12 +18,8 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
-    void on_addToCart_clicked();
-
-    void on_showCart_clicked();
-
-    void on_loadDatabase_clicked();
+public slots:
+    void actByYourChange(QObject*);
 
 private:
     Ui::MainWindow *ui;
