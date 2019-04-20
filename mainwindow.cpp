@@ -7,6 +7,7 @@
 #include<QTableWidgetItem>
 #include<iostream>
 #include <QtWidgets>
+#include <iostream>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -57,23 +58,28 @@ void MainWindow::actByYourChange(QObject* senderObj) {
 
             buildProducts* bp = new buildProducts();
             std::vector<QString> strings = bp->readFiles();
+            std::vector<Technology*> vec = bp->convertVector(strings);
             int iterator_row = 0;
             int column = 0;
-            for (unsigned int i = 0; i < strings.size(); i++) {
-                QTableWidgetItem* item = ui->productsTable->item(iterator_row, column);
-                item = new QTableWidgetItem();
-                if (i == 5 || (i % 5 == 1 && i > 6)) {
-                    ui->productsTable->insertRow(iterator_row);
-                    iterator_row += 1;
-                    column = 0;
-                }
-                if (i < 6) {
-                ui->productsTable->insertColumn(column);
-                }
+            for (unsigned int i = 0; i < vec.size(); i++) {
+                ui->productsTable->insertRow(iterator_row);
+                QTableWidgetItem* item = new QTableWidgetItem(vec[i]->getProductName());
                 ui->productsTable->setItem(iterator_row, column, item);
-                item->setText(strings[i]);
                 column += 1;
+                QTableWidgetItem* item2 = new QTableWidgetItem(vec[i]->getType());
+                ui->productsTable->setItem(iterator_row, column, item2);
+                column += 1;
+                QTableWidgetItem* item3 = new QTableWidgetItem(vec[i]->getPrice());
+                ui->productsTable->setItem(iterator_row, column, item3);
+                column += 1;
+                QTableWidgetItem* item4 = new QTableWidgetItem(vec[i]->getAttribute());
+                ui->productsTable->setItem(iterator_row, column, item4);
+                column = 0;
+                iterator_row += 1;
+
+                //ui->loadDatabase->setEnabled(false);
             }
+
 
     } else if (senderObj == ui->addToCart) {
         if (cart.size() == 0) {

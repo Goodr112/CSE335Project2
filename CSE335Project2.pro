@@ -30,6 +30,7 @@ SOURCES += \
         mainwindow.cpp \
     buildproducts.cpp \
     buildbundles.cpp \
+    responsivebutton.cpp \
     visitproducts.cpp \
     visitbundles.cpp \
     shoppingcartdialog.cpp
@@ -40,6 +41,7 @@ HEADERS += \
     builder.h \
     buildproducts.h \
     buildbundles.h \
+    responsivebutton.h \
     technology.h \
     visitor.h \
     visitproducts.h \

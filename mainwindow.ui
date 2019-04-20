@@ -23,6 +23,26 @@
       <height>271</height>
      </rect>
     </property>
+    <column>
+     <property name="text">
+      <string>Product Name</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Type</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Price</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Special Attribute</string>
+     </property>
+    </column>
    </widget>
    <widget class="QTableWidget" name="bundlesTable">
     <property name="geometry">
@@ -95,7 +115,7 @@
      <x>0</x>
      <y>0</y>
      <width>604</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

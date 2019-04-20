@@ -33,7 +33,7 @@ return strings;
 
 std::vector<Technology*> buildProducts::convertVector(std::vector<QString> vec) {
     std::vector<Technology*> finalVec;
-    for (unsigned int i = 0; i < vec.size(); i+6) {
+    for (unsigned int i = 0; i < vec.size(); i+=6) {
         Technology* tech = new Technology();
         tech->setProductName(vec[i+1]);
         tech->setType(vec[i]);
