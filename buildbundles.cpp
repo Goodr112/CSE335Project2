@@ -34,3 +34,7 @@ std::vector<QString> buildBundles::readFiles() {
     }
 return strings;
 }
+
+std::vector<Technology*> buildBundles::convertVector(std::vector<QString> vec) {
+
+}

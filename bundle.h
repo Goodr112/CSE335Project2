@@ -9,10 +9,18 @@
 class Bundle
 {
 public:
-    Bundle();
-public:
-    QString getName();
-    QString getPrice();
+    QString getName() {
+        return name;
+    }
+    QString getPrice() {
+        return price;
+    }
+    void setName(QString q) {
+        name = q;
+    }
+    void setPrice(QString q) {
+        price = q;
+    }
     int calcSavings();
 private:
     QString name;

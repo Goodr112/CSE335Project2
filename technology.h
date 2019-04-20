@@ -6,8 +6,6 @@
 
 class Technology
 {
-public:
-    Technology();
 
 public:
     QString getProductName() {
@@ -21,6 +19,18 @@ public:
     }
     QString getAttribute() {
         return attribute;
+    }
+    void setProductName(QString name) {
+        productName = name;
+    }
+    void setType(QString type2) {
+        type = type2;
+    }
+    void setPrice(QString p) {
+        price = p;
+    }
+    void setAttribute(QString att) {
+        attribute = att;
     }
 private:
     QString productName;
