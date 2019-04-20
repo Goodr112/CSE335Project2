@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    bundle.cpp \
         main.cpp \
         mainwindow.cpp \
     buildproducts.cpp \
@@ -34,10 +35,12 @@ SOURCES += \
     shoppingcartdialog.cpp
 
 HEADERS += \
+    bundle.h \
         mainwindow.h \
     builder.h \
     buildproducts.h \
     buildbundles.h \
+    technology.h \
     visitor.h \
     visitproducts.h \
     visitbundles.h \
