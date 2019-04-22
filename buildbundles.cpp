@@ -50,8 +50,8 @@ int buildBundles::calcSavings(Bundle* b, std::vector<Technology*> vec) {
         }
     }
     double savings = (b->getPrice().toDouble() / totalPrice) * 100;
-    savings = int(100 - savings);
-    return savings;
+    savings = round(100-savings);
+    return int(savings);
 }
 
 std::vector<Bundle*> buildBundles::convertVector(std::vector<QString> vec, std::vector<Technology*> vec2) {
