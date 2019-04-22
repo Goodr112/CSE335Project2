@@ -5,10 +5,11 @@
 #include <string>
 #include <QTableWidgetItem>
 #include <QStringList>
-
+#include <QDir>
 
 std::vector<QString> buildBundles::readFiles() {
-    QFile file("C:/Users/parke/OneDrive/Documents/GitHub/CSE335Project2/Bundles.csv");
+    QString path = QDir::currentPath() + "/../CSE335Project2/Bundles.csv";
+    QFile file(path);
     QString string;
     QString line;
     QString a;

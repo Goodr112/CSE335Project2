@@ -2,9 +2,11 @@
 #include <QFile>
 #include <QTextStream>
 #include <iostream>
+#include <QDir>
 
 std::vector<QString> buildProducts::readFiles() {
-    QFile file("C:/Users/parke/OneDrive/Documents/GitHub/CSE335Project2/Technology.csv");
+    QString path = QDir::currentPath() + "/../CSE335Project2/Technology.csv";
+    QFile file(path);
     QString string;
     QString line;
     QString a;
