@@ -32,30 +32,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::actByYourChange(QObject* senderObj) {
     if (senderObj == ui->loadDatabase) {
-        /*
-            std::vector<QString> strings;
-            buildBundles* bb = new buildBundles();
-            strings = bb->readFiles();
-            int iterator = 0;
-            int column = 0;
-            for (int i = 0; i < strings.size(); i++) {
-                QTableWidgetItem* item = new QTableWidgetItem(strings[i]);
-                if (i == 0) {
-                    ui->bundlesTable->insertRow(iterator);
-                    column = 0;
-                    item->setText(strings[i]);
-                    ui->bundlesTable->setItem(iterator, column, item);
-                    iterator += 1;
-                    column += 1;
-                    ui->bundlesTable->show();
-                } else {
-            item->setText(strings[i]);
-            ui->bundlesTable->setItem(iterator, column, item);
-            column += 1;
-            ui->bundlesTable->show();
-            }
-            }*/
-
             buildProducts* bp = new buildProducts();
             std::vector<QString> strings = bp->readFiles();
             std::vector<Technology*> vec = bp->convertVector(strings);
@@ -76,9 +52,28 @@ void MainWindow::actByYourChange(QObject* senderObj) {
                 ui->productsTable->setItem(iterator_row, column, item4);
                 column = 0;
                 iterator_row += 1;
-
-                //ui->loadDatabase->setEnabled(false);
             }
+
+
+            buildBundles* bb = new buildBundles();
+            std::vector<QString> strings1 = bb->readFiles();
+            std::vector<Bundle*> vec1 = bb->convertVector(strings1, vec);
+            int iterator_row1 = 0;
+            int column1 = 0;
+            for (unsigned int i = 0; i < vec1.size(); i++) {
+                ui->bundlesTable->insertRow(iterator_row1);
+                QTableWidgetItem* item = new QTableWidgetItem(vec1[i]->getName());
+                ui->bundlesTable->setItem(iterator_row1, column1, item);
+                column1 += 1;
+                QTableWidgetItem* item2 = new QTableWidgetItem(vec1[i]->getPrice());
+                ui->bundlesTable->setItem(iterator_row1, column1, item2);
+                column1 += 1;
+                QTableWidgetItem* item3 = new QTableWidgetItem(QString::number(vec1[i]->getSavings()) + "%");
+                ui->bundlesTable->setItem(iterator_row1, column1, item3);
+                iterator_row1 += 1;
+                column1 = 0;
+                }
+            ui->loadDatabase->setEnabled(false);
 
 
     } else if (senderObj == ui->addToCart) {

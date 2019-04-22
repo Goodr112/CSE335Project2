@@ -25,7 +25,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    bundle.cpp \
         main.cpp \
         mainwindow.cpp \
     buildproducts.cpp \

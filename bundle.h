@@ -21,11 +21,26 @@ public:
     void setPrice(QString q) {
         price = q;
     }
-    int calcSavings();
+    void addToVec(QString tech) {
+        items.push_back(tech);
+    }
+    unsigned int getSize() {
+        return items.size();
+    }
+    QString getItem(unsigned int position) {
+        return items[position];
+    }
+    void setSavings(int d) {
+        savings = d;
+    }
+    int getSavings() {
+        return savings;
+    }
 private:
     QString name;
     QString price;
-    std::vector<Technology*> items;
+    int savings;
+    std::vector<QString> items;
 
 };
 
