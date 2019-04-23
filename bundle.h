@@ -5,10 +5,15 @@
 #include <QString>
 #include "technology.h"
 
+#include "visitor.h"
 
 class Bundle
 {
 public:
+    void Accept(Visitor* v) {
+        v->visitBundle(this);
+    }
+
     QString getName() {
         return name;
     }

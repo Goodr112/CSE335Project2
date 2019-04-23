@@ -30,9 +30,9 @@ SOURCES += \
     buildproducts.cpp \
     buildbundles.cpp \
     responsivebutton.cpp \
-    visitproducts.cpp \
-    visitbundles.cpp \
-    shoppingcartdialog.cpp
+    cartdialog.cpp \
+    cartvisitor.cpp \
+    visitor.cpp
 
 HEADERS += \
     bundle.h \
@@ -42,14 +42,13 @@ HEADERS += \
     buildbundles.h \
     responsivebutton.h \
     technology.h \
-    visitor.h \
-    visitproducts.h \
-    visitbundles.h \
-    shoppingcartdialog.h
+    cartdialog.h \
+    cartvisitor.h \
+    visitor.h
 
 FORMS += \
         mainwindow.ui \
-    shoppingcartdialog.ui
+    cartdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

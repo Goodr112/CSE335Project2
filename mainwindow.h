@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QObject>
-#include "shoppingcartdialog.h"
+#include "cartdialog.h"
 
 
 namespace Ui {
@@ -20,10 +20,13 @@ public:
 
 public slots:
     void actByYourChange(QObject*);
+    void buttonValueShow();
+    void checkoutProcess();
 
 private:
     Ui::MainWindow *ui;
-    std::vector<shoppingCartDialog*> cart;
+    CartDialog* cart;
+    unsigned int cartID;
 };
 
 #endif // MAINWINDOW_H

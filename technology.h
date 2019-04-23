@@ -3,11 +3,16 @@
 
 #include <QString>
 
+#include "visitor.h"
 
 class Technology
 {
 
 public:
+    void Accept(Visitor* v) {
+        v->visitProduct(this);
+    }
+
     QString getProductName() {
         return productName;
     }
