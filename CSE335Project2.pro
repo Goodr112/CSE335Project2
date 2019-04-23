@@ -31,8 +31,7 @@ SOURCES += \
     buildbundles.cpp \
     responsivebutton.cpp \
     cartdialog.cpp \
-    cartvisitor.cpp \
-    visitor.cpp
+    cartvisitor.cpp
 
 HEADERS += \
     bundle.h \
