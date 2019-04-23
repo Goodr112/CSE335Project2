@@ -6,6 +6,7 @@
 #include <QTableWidgetItem>
 #include <QStringList>
 #include <QDir>
+#include <cmath>
 
 std::vector<QString> buildBundles::readFiles() {
     QString path = QDir::currentPath() + "/../CSE335Project2/Bundles.csv";
@@ -39,8 +40,6 @@ return strings;
 
 int buildBundles::calcSavings(Bundle* b, std::vector<Technology*> vec) {
     double totalPrice = 0.0;
-    qDebug(b->getName().toLatin1());
-    qDebug(b->getPrice().toLatin1());
     for (unsigned int i = 0; i < b->getSize(); i++) {
         for (unsigned int j = 0; i < vec.size(); j++) {
             if (b->getItem(i) == vec[j]->getProductName()) {
@@ -50,7 +49,7 @@ int buildBundles::calcSavings(Bundle* b, std::vector<Technology*> vec) {
         }
     }
     double savings = (b->getPrice().toDouble() / totalPrice) * 100;
-    savings = round(100-savings);
+    savings = std::round(100-savings);
     return int(savings);
 }
 
@@ -63,7 +62,6 @@ std::vector<Bundle*> buildBundles::convertVector(std::vector<QString> vec, std::
             numberOfItems += 1;
         }
     }
-    std::cout << "items: " << numberOfItems << std::endl;
     for (unsigned int i = 0; i < numberOfItems; i++) {
         Bundle* bundle = new Bundle();
         bundle->setName(vec[iterator]);
@@ -79,9 +77,7 @@ std::vector<Bundle*> buildBundles::convertVector(std::vector<QString> vec, std::
     }
 
     for (unsigned int i = 0; i < finalVec.size(); i++) {
-    std::cout << "before calc" << std::endl;
         int save = calcSavings(finalVec[i], vec2);
-        std::cout << "after calc" << std::endl;
         finalVec[i]->setSavings(save);
     }
     return finalVec;
